@@ -20,17 +20,6 @@ function getProducts() {
     });
 }
 
-function getProductById(id) {
-    return new Promise(function(resolve, reject) {
-        connection.query(
-            'SELECT * FROM products WHERE item_id = ' + id, function(err, res) {
-                if(err) return reject(err);
-                resolve(res);
-            }
-        )
-    });
-}
-
 function displayProducts(products) {
     for(product in products) {
         console.log(
