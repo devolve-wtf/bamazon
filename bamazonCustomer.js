@@ -70,9 +70,9 @@ function sell() {
                     function(err, res) {
                         if(err) throw err;
                         console.log(`\nYour order of ${qty} ${product[0].product_name} costs ${product[0].price * qty}`);
+                        connection.destroy();
                     }
                 )
-                connection.destroy();
             }else{
                 console.log('\nInsufficient inventory');
                 connection.destroy();
